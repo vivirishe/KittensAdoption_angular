@@ -37,5 +37,12 @@
         }
 
       ]
-    }
+    };
+    vm.moveAdopted = moveAdopted;
+    
+    function moveAdopted() {
+      vm.kitties.filter(function(adopt) {
+        return !adopt.adopted
+      })
+    };
 }());

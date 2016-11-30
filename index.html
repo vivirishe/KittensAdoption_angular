@@ -11,13 +11,22 @@
 	</head>
 
 	<body>
-    <div class="left-container">
-    <h1>Kitties for Adoption</h1>
-    </div>
+    <section ng-controller="KittiesController as kittiesVm">
+      <div class="left-container">
+        <h1>Kitties for Adoption</h1>
+        <ul ng-repeat="kitty in kittiesVm.kitties | filter: {adopted: false}" ng-bind="kittiesVm.moveAdopted()">
+          <li class="dashed" > <strong>My name is: {{kitty.catName}}</strong> <br> I am {{kitty.monthsOld}} <br> I am a {{kitty.gender}} <br> <img ng-src="{{kitty.image}}" alt="kitty"> <br> Adopt? <input type="checkbox"> </li>
+        </ul>
+      </div>
 
-    <div class="right-container">
-    <h1>At their forever homes! </h1>
-    </div>
+      <div class="right-container">
+        <h1>At their forever homes! </h1>
+        <ul ng-repeat="kitty in kittiesVm.kitties | filter: {adopted: true}" ng-bind="kittiesVm.moveAdopted()">
+          <li class="dashed" > <strong>My name is: {{kitty.catName}}</strong> <br> I am {{kitty.monthsOld}} <br> I am a {{kitty.gender}} <br> <img ng-src="{{kitty.image}}" alt="kitty"> <br> Adopt? <input type="checkbox"> </li>
+        </ul>
+      </div>
+    </section>
+
     <!--Sourcing Angular-->
 
 		<!-- Source in module -->
