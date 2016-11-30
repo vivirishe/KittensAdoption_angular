@@ -1,0 +1,20 @@
+/*@import a Google Font here!*/
+
+body {
+  background-image: url("/images/background.png");
+}
+
+#container {
+
+}
+
+.dashed {
+
+}
+
+.left-container, .right-container {
+  
+}
+h1 {
+  font-family: 'Cabin Sketch', cursive;
+}
